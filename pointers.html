@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C++ Is Easy | Pointers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="content" style="margin-top: 100px;">
+        <h2>Pointers</h2>
+        <section>
+            <p>A lot of this will likely be review if you're at all familiar with the concept of pointers but it's good
+                to
+                cover our bases anyways.</p>
+        </section>
+
+        <section>
+            <h3>What is a pointer?</h3>
+            <center style="margin: 20px;">
+                <img src="img/ptr.jpg" width="300" />
+            </center>
+            <p>Simply put, a pointer is an object that stores the
+                <u>memory address</u> of another object. This is useful for a lot of reasons:
+            </p>
+            <ul>
+                <li>It allows you to pass by reference instead of copying (duplicating) objects when you want to pass
+                    them
+                    to a function.</li>
+                <li>It allows you to change the value of a variable outside your current scope. As long as you have
+                    apointer
+                    to it, you can access the object's memory.</li>
+                <li>It allows you to store a collection of polymorphic objects as long as the type the collection stores
+                    is
+                    a class all objects inherit from.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <p>There are more reasons to use pointers, but these are the main ones. Starting with the most basic form of
+                a
+                pointer in C++, the <b>raw pointer</b>, let's see how we might use one:</p>
+            <br />
+            <code>
+            <pre>
+void addNumbers(int a, int b, int* c) {
+    *c = a + b;
+}
+
+int main() {
+    int result;
+    addNumbers(4, 5, &result);
+    std::cout << result << std::endl;
+    return 0; 
+}
+            </pre>
+        </code>
+        </section>
+    </div>
+</body>
+
+</html>
