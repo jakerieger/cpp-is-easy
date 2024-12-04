@@ -27,36 +27,53 @@
             <p>Simply put, a pointer is an object that stores the
                 <u>memory address</u> of another object. This is useful for a lot of reasons:
             </p>
-            <ul>
+            <br />
+            <ol>
                 <li>It allows you to pass by reference instead of copying (duplicating) objects when you want to pass
                     them
                     to a function.</li>
                 <li>It allows you to change the value of a variable outside your current scope. As long as you have
-                    apointer
+                    a pointer
                     to it, you can access the object's memory.</li>
                 <li>It allows you to store a collection of polymorphic objects as long as the type the collection stores
                     is
                     a class all objects inherit from.
                 </li>
-            </ul>
+            </ol>
         </section>
 
         <section>
-            <p>There are more reasons to use pointers, but these are the main ones. Starting with the most basic form of
-                a pointer in C++, the <b>raw pointer</b>, let's see how we might use one:</p>
+            <p>There are more reasons to use pointers, but these are usually the main ones you'll run in to.</p>
+            <p>Let's start with the most basic form of pointer in C++, the <u>raw</u> pointer, and take a look at each
+                one of the cases above.</p>
             <br />
-            <pre><code data-language="c">
-void addNumbers(int a, int b, int* c) {
-    *c = a + b;
-}
 
-int main() {
-    int result;
-    addNumbers(4, 5, &result);
-    std::cout << result << std::endl;
-    return 0; 
-}</code>
-            </pre>
+            <h3>1. Pass by reference</h3>
+            <p>Passing a variable by reference is probably the single most common use of pointers in C/C++.</p>
+            <blockquote>
+                Yes, C++ has a literal "reference" operator <code>(&)</code>, but this is not what I'm referring to.
+                I'm simply using
+                the term to describe the concept
+                of a reference.
+            </blockquote>
+            <pre><code data-language="c">
+int* x; /* stores the memory address of an integer */
+            </code></pre>
+
+            <h3>2. Modification outside scope</h3>
+            <pre><code data-language="c">
+int* x; /* stores the memory address of an integer */
+            </code></pre>
+
+            <h3>3. Polymorphic containers</h3>
+            <pre><code data-language="c">
+int* x; /* stores the memory address of an integer */
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Smart Pointers</h3>
+            <p>With the advent of C++11, we got a new way of working with pointers: <i>smart</i> pointers.</p>
         </section>
     </div>
 

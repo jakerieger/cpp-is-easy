@@ -117,6 +117,23 @@ li {
     margin-left: 48px;
 }
 
+pre {
+    line-height: normal !important;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+}
+
 code {
     font-size: 12pt;
+}
+
+blockquote {
+    padding: 20px;
+    font-size: 12pt;
+    background-color: var(--darkest);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--term-green);
+    color: var(--text-secondary);
 }
