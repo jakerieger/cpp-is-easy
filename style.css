@@ -112,3 +112,11 @@ nav div {
 section {
     margin-top: 40px;
 }
+
+li {
+    margin-left: 48px;
+}
+
+code {
+    font-size: 12pt;
+}

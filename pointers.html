@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tomorrow-night.css" />
 </head>
 
 <body>
@@ -42,11 +43,9 @@
 
         <section>
             <p>There are more reasons to use pointers, but these are the main ones. Starting with the most basic form of
-                a
-                pointer in C++, the <b>raw pointer</b>, let's see how we might use one:</p>
+                a pointer in C++, the <b>raw pointer</b>, let's see how we might use one:</p>
             <br />
-            <code>
-            <pre>
+            <pre><code data-language="c">
 void addNumbers(int a, int b, int* c) {
     *c = a + b;
 }
@@ -56,11 +55,12 @@ int main() {
     addNumbers(4, 5, &result);
     std::cout << result << std::endl;
     return 0; 
-}
+}</code>
             </pre>
-        </code>
         </section>
     </div>
+
+    <script src="rainbow-custom.min.js"></script>
 </body>
 
 </html>
