@@ -12,7 +12,11 @@
 
 <body>
     <div class="content" style="margin-top: 100px;">
-        <h2>Pointers</h2>
+        <center style="margin: 20px;">
+            <h2>Pointers*</h2>
+            <br />
+            <img src="img/ptr.jpg" width="300" />
+        </center>
         <section>
             <p>A lot of this will likely be review if you're at all familiar with the concept of pointers but it's good
                 to
@@ -21,9 +25,6 @@
 
         <section>
             <h3>What is a pointer?</h3>
-            <center style="margin: 20px;">
-                <img src="img/ptr.jpg" width="300" />
-            </center>
             <p>Simply put, a pointer is an object that stores the
                 <u>memory address</u> of another object. This is useful for a lot of reasons:
             </p>
@@ -43,7 +44,8 @@
         </section>
 
         <section>
-            <p>There are more reasons to use pointers, but these are usually the main ones you'll run in to.</p>
+            <p>There are certainly more reasons to use pointers, but these are usually the main ones you'll run into.
+            </p>
             <p>Let's start with the most basic form of pointer in C++, the <u>raw</u> pointer, and take a look at each
                 one of the cases above.</p>
             <br />
@@ -57,8 +59,43 @@
                 of a reference.
             </blockquote>
             <pre><code data-language="c">
-int* x; /* stores the memory address of an integer */
+void addReference(int* a, int* b, int* c) {
+    *c = *a + *b;
+}
+
+int main() {
+    int a = 10;
+    int b = 20;
+    int c;
+    addReference(&a, &b, &c); // The result of 'a + b' is now stored in c
+    printf("%d\n", c);        // "30"
+
+    return 0;
+}
             </code></pre>
+
+            <p>One nice feature of this method is that it allows your function to return a type different than that of
+                the data your function modifies. For example, you might want to return a boolean value to denote whether
+                the action succeeded or failed,
+                preventing the user from accessing the modified data in an instance where the data is likely invalid:
+            </p>
+            <br />
+            <pre><code data-language="c">
+int main() {
+    char* data = new char[2048];
+
+    if (!doSomethingWithData(data)) {
+        delete[] data; // clean memory and terminate, data is invalid
+        return -1;
+    }
+
+    // Do something with data since we know it's valid
+
+    delete[] data;
+    return 0;
+}
+            </code></pre>
+
 
             <h3>2. Modification outside scope</h3>
             <pre><code data-language="c">
